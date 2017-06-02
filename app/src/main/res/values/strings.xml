@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Momos</string>
+    <string name="inicio">inicio</string>
+    <string name="perfil">Perfil</string>
+    <string name="camara">Camara</string>
+
+
+
+    Registro
+    <string name="ingrese_correo">Ingrese su correo electrónico</string>
+    <string name="ingrese_usuario">Ingrese su usuario</string>
+    <string name="ingrese_contrasena">Ingrese su contraseña</string>
+    <string name="ingrese_repetir_contrasena">Confirme su contraseña</string>
+    <string name="no_coinciden">Las contraseñas no coinciden</string>
+</resources>

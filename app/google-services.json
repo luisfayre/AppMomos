@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "300357834605",
+    "firebase_url": "https://dulcet-cable-166621.firebaseio.com",
+    "project_id": "dulcet-cable-166621",
+    "storage_bucket": "dulcet-cable-166621.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300357834605:android:06743adcec414e83",
+        "android_client_info": {
+          "package_name": "com.tap.momos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "300357834605-n2h416961gu3aulq8l1evte8e1e83mkc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tap.momos",
+            "certificate_hash": "46a678a1860a20568b039f0557663e9b31c49c0a"
+          }
+        },
+        {
+          "client_id": "300357834605-2804dkn2rc8tma3ihsll4j8h6uimrn8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcaklqAKfrsMwnzV4fJxf8bhbvSFqG8-0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "300357834605-2804dkn2rc8tma3ihsll4j8h6uimrn8b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

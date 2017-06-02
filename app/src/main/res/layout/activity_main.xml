@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:design="http://schemas.android.com/apk/res-auto"
+    tools:context="com.tap.momos.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity ="bottom">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_gravity ="top"
+            android:background="@drawable/sombra"/>
+
+        <android.support.design.widget.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/bottomNavigationView"
+            design:menu="@menu/menu_navegacion" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/contenedor_principal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+
+</android.support.design.widget.CoordinatorLayout>

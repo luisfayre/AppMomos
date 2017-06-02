@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    //Principal
+    <color name="colorPrimaryTec">#d32f2f</color>
+    <color name="colorPrimaryDarkTec">#c62828</color>
+    <color name="colorAccentTec">#fdd835</color>
+
+    <color name="colorPrimarySii">#303F9F</color>
+    <color name="colorPrimaryDarkSii">#283593</color>
+    <color name="colorAccentSii">#fdd835</color>
+
+
+    //Login
+    <color name="colorPrimaryTecL">#fe7146</color>
+    <color name="colorPrimaryDarkTecL">#f5511e</color>
+    <color name="colorAccentTecL">#fd7e35</color>
+    <color name="azul">#059ce5</color>
+
+
+    //Ajustes
+    <color name="colorPrimaryTecA">#d32f2f</color>
+    <color name="colorPrimaryDarkTecA">#c62828</color>
+    <color name="colorAccentTecA">#fd7e35</color>
+</resources>
