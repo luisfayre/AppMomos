@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fondo3">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:elevation="5dp"
+        android:id="@+id/CardViewPerfil"
+        app:cardElevation="2dp"
+        app="@android:color/white"
+        android:innerRadius="10dp"
+        android:shape="ring"
+        android:thicknessRatio="1.9"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+        <RelativeLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Elige tu meme"
+                android:textAlignment="center"
+                android:id="@+id/textView3"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subir Imagen"
+        android:id="@+id/select_image"
+        android:backgroundTint="@color/colorPrimaryDarkMMA"
+        android:textColor="@color/cardview_light_background"
+        android:layout_below="@+id/sImg_imv_verImagen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Establecer titulo"
+        android:id="@+id/sImg_btn_subirImagen"
+        android:backgroundTint="@color/colorPrimaryDarkMMA"
+        android:textColor="@color/cardview_light_background"
+        android:layout_alignBottom="@+id/CardViewPerfil"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:elevation="5dp"
+        android:ems="10"
+        android:textAlignment="center"
+        android:hint="Titulo"
+        android:id="@+id/sImg_tex_titulo"
+        android:layout_above="@+id/sImg_btn_subirImagen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/sImg_imv_verImagen"
+        android:layout_marginTop="69dp"
+        android:elevation="5dp"
+        android:background="@color/colorAccentMMA"
+        android:layout_alignTop="@+id/CardViewPerfil"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
