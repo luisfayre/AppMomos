@@ -25,6 +25,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
@@ -49,7 +50,7 @@ public class SubirImagen extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_subirimagen);
+        setContentView(R.layout.prueba_subir);
 
         Firebase.setAndroidContext(this);
 
@@ -70,7 +71,7 @@ public class SubirImagen extends AppCompatActivity {
                 if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
                         != PackageManager.PERMISSION_GRANTED)
                 {
-                    Toast.makeText(getApplicationContext(), "Call for Permission", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "Call for Permission", Toast.LENGTH_SHORT).show();
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
                     {
                         requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_EXTERNAL_STORAGE);
@@ -112,7 +113,7 @@ public class SubirImagen extends AppCompatActivity {
                 }else{
                     Firebase childRef_name = mRoofRef.child("Image_Title");
                     childRef_name.setValue(mName);
-                    Toast.makeText(getApplicationContext(), "Titulo guardado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Guardando titulo...", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -153,7 +154,7 @@ public class SubirImagen extends AppCompatActivity {
             user_image.setImageURI(mImageUri);
             StorageReference filePath = mStorage.child("User_Images").child(mImageUri.getLastPathSegment());
 
-            mProgressDialog.setMessage("Uploading Image....");
+            mProgressDialog.setMessage("Subiendo Imagen…");
             mProgressDialog.show();
 
             filePath.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -171,8 +172,15 @@ public class SubirImagen extends AppCompatActivity {
                             .crossFade()
                             .diskCacheStrategy(DiskCacheStrategy.RESULT)
                             .into(user_image);
-                    Toast.makeText(getApplicationContext(), "Updated.", Toast.LENGTH_SHORT).show();
+                    // Toast.makeText(getApplicationContext(), "Updated.", Toast.LENGTH_SHORT).show();
                     mProgressDialog.dismiss();
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                    double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
+                    //displaying percentage in progress dialog
+                    mProgressDialog.setMessage("Subiendo " + ((int) progress) + "%...");
                 }
             });
         }

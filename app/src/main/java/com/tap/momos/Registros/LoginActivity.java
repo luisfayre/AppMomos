@@ -113,6 +113,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void olvideConrasena(View view) {
-        Toast.makeText(LoginActivity.this, "Olvide la contra por jugarle al vergas", Toast.LENGTH_SHORT).show();
+        Toast.makeText(LoginActivity.this, " :,(", Toast.LENGTH_SHORT).show();
     }
 }

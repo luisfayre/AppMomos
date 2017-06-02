@@ -23,9 +23,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Registros.RegisterActivity" android:theme="@style/AppThemeTecLogin"/>
-        <activity android:name=".PrincipalActivity" android:theme="@style/AppThemeTecLogin"/>
-        <activity android:name=".SubirImagen" android:theme="@style/AppThemeTecLogin"/>
-        <activity android:name=".ShowData" android:theme="@style/AppThemeTecLogin"/>
+        <activity android:name=".PrincipalActivity" android:theme="@style/AppThemePrincipal"/>
+        <activity android:name=".SubirImagen" android:theme="@style/AppThemePrincipal"/>
+        <activity android:name=".ShowData" android:theme="@style/AppThemePrincipal"/>
     </application>
 
 </manifest>

@@ -26,4 +26,9 @@
     <color name="colorPrimaryTecA">#d32f2f</color>
     <color name="colorPrimaryDarkTecA">#c62828</color>
     <color name="colorAccentTecA">#fd7e35</color>
+
+    //Principla
+    <color name="colorPrimaryMMA">#314683</color>
+    <color name="colorPrimaryDarkMMA">#2eb8c1</color>
+    <color name="colorAccentMMA">#3ddadb</color>
 </resources>

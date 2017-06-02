@@ -15,4 +15,10 @@
         <item name="colorAccent">@color/colorAccentTecL</item>
     </style>
 
+    <style name="AppThemePrincipal" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryMMA</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkMMA</item>
+        <item name="colorAccent">@color/colorAccentMMA</item>
+    </style>
+
 </resources>
