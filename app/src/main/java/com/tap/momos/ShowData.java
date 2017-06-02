@@ -58,34 +58,34 @@ public class ShowData extends AppCompatActivity {
                 viewHolder.Image_Title(model.getImage_Title());
 
 
-//        //Administrador
-//                viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-//
-//                    @Override
-//                    public void onClick(final View v) {
-//                        AlertDialog.Builder builder = new AlertDialog.Builder(ShowData.this);
-//                        builder.setMessage("Deseas eliminar este elemento?").setCancelable(false)
-//                                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
-//                                    @Override
-//                                    public void onClick(DialogInterface dialog, int which) {
-//                                        int selectedItems = position;
-//                                        mFirebaseAdapter.getRef(selectedItems).removeValue();
-//                                        mFirebaseAdapter.notifyItemRemoved(selectedItems);
-//                                        recyclerView.invalidate();
-//                                        onStart();
-//                                    }
-//                                })
-//                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                                    @Override
-//                                    public void onClick(DialogInterface dialog, int which) {
-//                                        dialog.cancel();
-//                                    }
-//                                });
-//                        AlertDialog dialog = builder.create();
-//                        dialog.setTitle("Confimar");
-//                        dialog.show();
-//                    }
-//                });
+        //Administrador
+                viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(final View v) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(ShowData.this);
+                        builder.setMessage("Deseas eliminar este elemento?").setCancelable(false)
+                                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        int selectedItems = position;
+                                        mFirebaseAdapter.getRef(selectedItems).removeValue();
+                                        mFirebaseAdapter.notifyItemRemoved(selectedItems);
+                                        recyclerView.invalidate();
+                                        onStart();
+                                    }
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
+                                    }
+                                });
+                        AlertDialog dialog = builder.create();
+                        dialog.setTitle("Confimar");
+                        dialog.show();
+                    }
+                });
 
 
             }
