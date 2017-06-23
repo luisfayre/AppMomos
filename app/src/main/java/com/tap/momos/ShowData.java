@@ -26,6 +26,7 @@ public class ShowData extends AppCompatActivity {
     RecyclerView recyclerView;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference myRef;
+    private LinearLayoutManager mLayoutManager;
     private FirebaseRecyclerAdapter<ShowDataItems, ShowDataViewHolder> mFirebaseAdapter;
 
     public ShowData() {
@@ -43,6 +44,9 @@ public class ShowData extends AppCompatActivity {
         recyclerView = (RecyclerView)findViewById(R.id.mostrar_datos_ly);
         recyclerView.setLayoutManager(new LinearLayoutManager(ShowData.this));
         Toast.makeText(ShowData.this, "Cargando...", Toast.LENGTH_SHORT).show();
+
+
+
     }
 
 
@@ -51,6 +55,7 @@ public class ShowData extends AppCompatActivity {
         super.onStart();
         mFirebaseAdapter = new FirebaseRecyclerAdapter<ShowDataItems, ShowDataViewHolder>
                 (ShowDataItems.class, R.layout.item_data, ShowDataViewHolder.class, myRef)
+
         {
 
             public void populateViewHolder(final ShowDataViewHolder viewHolder, ShowDataItems model, final int position) {
@@ -59,40 +64,48 @@ public class ShowData extends AppCompatActivity {
 
 
         //Administrador
-                viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(final View v) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(ShowData.this);
-                        builder.setMessage("Deseas eliminar este elemento?").setCancelable(false)
-                                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        int selectedItems = position;
-                                        mFirebaseAdapter.getRef(selectedItems).removeValue();
-                                        mFirebaseAdapter.notifyItemRemoved(selectedItems);
-                                        recyclerView.invalidate();
-                                        onStart();
-                                    }
-                                })
-                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.cancel();
-                                    }
-                                });
-                        AlertDialog dialog = builder.create();
-                        dialog.setTitle("Confimar");
-                        dialog.show();
-                    }
-                });
+//                viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+//
+//                    @Override
+//                    public void onClick(final View v) {
+//                        AlertDialog.Builder builder = new AlertDialog.Builder(ShowData.this);
+//                        builder.setMessage("Deseas eliminar este elemento?").setCancelable(false)
+//                                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+//                                    @Override
+//                                    public void onClick(DialogInterface dialog, int which) {
+//                                        int selectedItems = position;
+//                                        mFirebaseAdapter.getRef(selectedItems).removeValue();
+//                                        mFirebaseAdapter.notifyItemRemoved(selectedItems);
+//                                        recyclerView.invalidate();
+//                                        onStart();
+//                                    }
+//                                })
+//                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+//                                    @Override
+//                                    public void onClick(DialogInterface dialog, int which) {
+//                                        dialog.cancel();
+//                                    }
+//                                });
+//                        AlertDialog dialog = builder.create();
+//                        dialog.setTitle("Confimar");
+//                        dialog.show();
+//                    }
+//                });
 
 
             }
         };
 
+        mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        mLayoutManager.setReverseLayout(true);
+        mLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(mFirebaseAdapter);
+
+
     }
+
+
 
     //View Holder For Recycler View
     public static class ShowDataViewHolder extends RecyclerView.ViewHolder {
@@ -101,6 +114,7 @@ public class ShowData extends AppCompatActivity {
 
         public ShowDataViewHolder(final View itemView) {
             super(itemView);
+
             image_url = (ImageView) itemView.findViewById(R.id.img_meme);
             image_title = (TextView) itemView.findViewById(R.id.texto_meme);
         }
@@ -118,4 +132,6 @@ public class ShowData extends AppCompatActivity {
                     .into(image_url);
         }
     }
+
+
 }

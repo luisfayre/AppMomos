@@ -7,14 +7,22 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import com.tap.momos.Registros.LoginActivity;
 
 /**
  * Created by luisf on 01/06/2017.
  */
-public class PrincipalActivity extends AppCompatActivity {
+public class PrincipalActivity extends AppCompatActivity{
 
     private Button subirImagen, cerrarSecion, mostrarImagen;
+
+    private FirebaseAuth firebaseAuth;
+    private FirebaseAuth.AuthStateListener fireAuthListener;
+    private DatabaseReference databaseReference;
+    private FirebaseDatabase firebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +46,18 @@ public class PrincipalActivity extends AppCompatActivity {
                 subirImagen();
             }
         });
+
+//        Intent intent = new Intent(Intent.ACTION_VIEW , Uri.parse("https://drive.google.com/open?id=0Bwdo7nkGILnYZ1IyMXliRTRQS2c"));
+//        startActivity(intent);
+//
+//        int currentVersion = android.os.Build.VERSION.SDK_INT;
+//        if (currentVersion >= android.os.Build.VERSION_CODES.LOLLIPOP){
+//            // Do something for lollipop and above versions
+//        } else{
+//            // do something for phones running an SDK before lollipop
+//        }
+
+
     }
 
     private void mostrarImagen() {
@@ -59,5 +79,4 @@ public class PrincipalActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
-
 }

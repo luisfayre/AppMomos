@@ -69,4 +69,5 @@
         android:textColor="@color/cardview_light_background"
         android:layout_alignBottom="@+id/CardViewPerfil"
         android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
