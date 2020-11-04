@@ -62,8 +62,7 @@ public class ShowData extends AppCompatActivity {
                 viewHolder.Image_URL(model.getImage_URL());
                 viewHolder.Image_Title(model.getImage_Title());
 
-
-
+/*
                 viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
 
                     @Override
@@ -91,7 +90,7 @@ public class ShowData extends AppCompatActivity {
                         dialog.show();
                     }
                 });
-
+*/
 
             }
         };
